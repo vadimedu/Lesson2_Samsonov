@@ -9,6 +9,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Main } from './pages/Main.js';
 import { Profile } from './pages/Profile.js';
 import { Header } from './Header';
+import { Provider } from 'react-redux';
+import { store } from './store/index.js';
 
  
 export const defMes = [{
@@ -38,7 +40,7 @@ export const defMes = [{
 
   return (
   <>
-    
+    <Provider store={store}>
     <BrowserRouter>
  
         <Routes>
@@ -53,7 +55,7 @@ export const defMes = [{
           <Route path ="*" element={<h2> 404 not found page </h2>}/>
         </Routes>
     </BrowserRouter>
-  
+    </Provider>
    
   </>
    
